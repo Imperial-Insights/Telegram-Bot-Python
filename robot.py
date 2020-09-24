@@ -4,14 +4,15 @@ from telegram.ext import Updater,CommandHandler,MessageHandler,Filters
 from Adafruit_IO import Client,Feed,Data
 import os
 
-ADAFRUIT_IO_USERNAME= os.getenv(ADAFRUIT_IO_USERNAME)         #ADAFRUIT_IO_USERNAME
-ADAFRUIT_IO_KEY = os.getenv(ADAFRUIT_IO_KEY)                  #ADAFRUIT_IO_KEY
-aio = Client(ADAFRUIT_IO_USERNAME,ADAFRUIT_IO_KEY)
-TELEGRAM_TOKEN = os.getenv(TELEGRAM_TOKEN)
+ADAFRUIT_IO_USERNAME= os.getenv('ADAFRUIT_IO_USERNAME')         #ADAFRUIT_IO_USERNAME
+ADAFRUIT_IO_KEY = os.getenv('ADAFRUIT_IO_KEY')                  #ADAFRUIT_IO_KEY
+aio = Client('ADAFRUIT_IO_USERNAME','ADAFRUIT_IO_KEY')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 def start(bot,update):   #start command defination
   print(str(update.effective_chat.id))
   bot.send_message(chat_id = update.effective_chat.id, text="Welcome Abhishek! Type either /lighton or 'Trun on Light' to turn on light else type /lightoff or 'Turn Off Light' to turn of the light" )
+
 def unknown(bot,update): #if and command are given apart from start,lighton,lightoff then it prints error
   bot.send_message(chat_id =update.effective_chat.id,text='Error in undertandng your command!Please give proper command')
 
