@@ -1,3 +1,2 @@
 python-telegram-bot
-adafruit-io
-gunicorn
+adafruit_IO
