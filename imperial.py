@@ -46,7 +46,7 @@ def given_message(bot,update):         #defining 'Turn on Light','Turn Off Light
 
 #accessing the tokens and commands using api keys and handling them
 
-u = Updater('TELEGRAM_TOKEN')
+u = Updater('TELEGRAM_TOKEN',use_context = True)
 dp = u.dispatcher
 dp.add_handler(CommandHandler('lighton',lighton))
 dp.add_handler(CommandHandler('lightoff',lightoff))
